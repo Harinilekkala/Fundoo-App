@@ -1,75 +1,80 @@
 <div class="maincontainer">
   <div class="signincontainer">
     <div class="subdiv">
-      <form class="border">
+      <form [formGroup]="registerForm" (ngSubmit)="onsubmit()" class="border">
         <span class="Fclass"><b>F</b></span>
         <span class="uclass"><b>u</b></span>
         <span class="nclass"><b>n</b></span>
         <span class="dclass"><b>d</b></span>
         <span class="Oclass"><b>o</b></span>
         <span class="oclass"><b>o</b></span>
+
+        <div class="creation">
+          <h1>Create Your Google Account</h1>
+        </div>
+
+        <div class="matformclass">
+          <mat-form-field appearance="outline">
+            <mat-label>First Name</mat-label>
+            <input matInput placeholder="firstname" formControlName="fn" />
+            <mat-error >  Enter First And Last Name </mat-error>
+          </mat-form-field>
+          <mat-form-field class="spaceclass" appearance="outline">
+            <mat-label>Last Name</mat-label>
+            <input matInput placeholder="lastname" formControlName="ln" />
+            
+          </mat-form-field>
+        </div>
+
+        <div class="mailclass">
+          <mat-form-field class="usrclass" appearance="outline">
+            <mat-label>User Name</mat-label>
+            <input matInput placeholder="UserName" formControlName="e"/>
+            <mat-hint class="subline">you can use letters,numbers & periods</mat-hint>
+            <mat-error >  Choose a Gmail Address </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="optionmail">Use my current email address instead</div>
+
+        <div class="pswdclass">
+          <mat-form-field appearance="outline">
+            <mat-label>Password</mat-label>
+            <input matInput placeholder="Password"  formControlName="p"/>
+            <mat-error >  Enter a Password </mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="confirmclass" appearance="outline">
+            <mat-label>confirm</mat-label>
+            <input matInput placeholder="confirm" formControlName="cp"/>
+            </mat-form-field><br />
+          <mat-hint class="subline">
+            use 8 or more characters with a mix of letters , numbers &
+            symbol</mat-hint>
+
+        </div>
+
+        <div class="checkboxclass">
+          <input type="checkbox" id="shwpwd" />
+          <label class=""> Show password</label>
+        </div>
+
+        <div class="lastclass">
+          <div routerLink="/signin">
+            sign in instead
+          </div>
+
+          <button class="nextclass">Next</button>
+        </div>
       </form>
-      <div class="creation">
-        <h1>Create Your Google Account</h1>
-      </div>
-
-      <div class="matformclass">
-        <mat-form-field appearance="outline">
-          <mat-label>First Name</mat-label>
-          <input matInput placeholder="firstname" />
-        </mat-form-field>
-        <mat-form-field class="spaceclass" appearance="outline">
-          <mat-label>Last Name</mat-label>
-          <input matInput placeholder="lastname" />
-        </mat-form-field>
-      </div>
-
-      <div class="mailclass">
-        <mat-form-field class="usrclass" appearance="outline">
-          <mat-label>User Name</mat-label>
-          <input matInput placeholder="UserName" />
-          <mat-hint class="subline"
-            >you can use letters,numbers & periods</mat-hint
-          >
-        </mat-form-field>
-      </div>
-
-      <div class="optionmail">Use my current email address instead</div>
-
-      <div class="pswdclass">
-        <mat-form-field appearance="outline">
-          <mat-label>Password</mat-label>
-          <input matInput placeholder="Password" />
-        </mat-form-field>
-
-        <mat-form-field class="confirmclass" appearance="outline">
-          <mat-label>confirm</mat-label>
-          <input matInput placeholder="confirm" /> </mat-form-field
-        ><br />
-        <mat-hint class="subline">
-          use 8 or more characters with a mix of letters , numbers &
-          symbol</mat-hint>
-        
-      </div>
-
-      <div class="checkboxclass">
-        <input type="checkbox" id="shwpwd" />
-        <label class=""> Show password</label>
-      </div>
-
-      <div class="lastclass">
-        <div>
-        sign in instead
-      </div>
-
-        <button class="nextclass">Next</button>
-      </div>
-    </div>
-    <div class="imageclass">
-      <img class="img" src="../../assets/assests/account img.svg" />
-      <div class="imagtag">
+       </div>
+       <div class="imageclass">
+        <img class="img" src="../../assets/assests/account img.svg" />
+        <div class="imagtag">
         One account.All of google.<br class="secondtag" />Working for you
-      </div>
-    </div>
+        </div>
+      
+       </div>
+
   </div>
 </div>

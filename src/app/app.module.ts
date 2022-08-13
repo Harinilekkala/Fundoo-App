@@ -10,7 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SigninComponent } from './Components/signin/signin.component';
 import { ForgotpageComponent } from './forgotpage/forgotpage.component';
 import { ResetpageComponent } from './resetpage/resetpage.component';
-
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +24,8 @@ import { ResetpageComponent } from './resetpage/resetpage.component';
     AppRoutingModule,
     MatFormFieldModule,
     MatInputModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

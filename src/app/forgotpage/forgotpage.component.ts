@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-forgotpage',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ForgotpageComponent implements OnInit {
 
-  constructor() { }
+  forgotpage!: FormGroup;
+
+  constructor(private formBuilder:FormBuilder) { }
 
   ngOnInit(): void {
+    this.forgotpage=this.formBuilder.group({
+      phoneoremail:['', [Validators.required, Validators.minLength(15)]],
+    })
+    
   }
+
+  onsubmit(){}
 
 }

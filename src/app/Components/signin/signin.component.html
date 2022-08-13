@@ -1,25 +1,27 @@
 <div class="maincontainer">
     <div class="signincontainer">
-        <form class="border">
+        <form [formGroup]="signinform" (ngSubmit)="onsubmit()" class="border">
             <span class="Fclass"><b>F</b></span>
             <span class="uclass"><b>u</b></span>
             <span class="nclass"><b>n</b></span>
             <span class="dclass"><b>d</b></span>
             <span class="Oclass"><b>o</b></span>
             <span class="oclass"><b>o</b></span>
-          </form>
+          
           <div class="titlesignin">Sign in</div>
           <div class="thirdtitle">
             Use your Google Account
           </div>
           <mat-form-field class="inputclass" appearance="outline">
             <mat-label>Email or phone</mat-label>
-            <input matInput placeholder="Email or phone" />
+            <mat-error > Enter an email or phone number</mat-error>
+            <input matInput placeholder="Email or phone" formControlName="emailorphone"/>
           </mat-form-field>
-          <div class="forgotmailclass">Forgot email?</div>
+          <div class="forgotmailclass" routerLink="/forgotpage">Forgot email?</div>
           <mat-form-field class="inputclass" appearance="outline">
             <mat-label>Password</mat-label>
-            <input matInput placeholder="Password" />
+            <mat-error > Enter a password</mat-error>
+            <input matInput placeholder="Password" formControlName="p"/>
           </mat-form-field>
           
           <div class="suggestionclass">Not your computer? Use Guest mode to sign in privately.</div>
@@ -28,6 +30,7 @@
             Create account
             <button class="nextclass">Next</button>
           </div>
+        </form>
           
     </div>
     
