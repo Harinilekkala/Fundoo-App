@@ -1,5 +1,5 @@
 .maincontainer {
-  margin-top: 20px;
+  // margin-top: 20px;
 }
 .signincontainer {
   box-shadow: 3px 3px 5px 6px #ccc;
@@ -26,6 +26,7 @@
 .titlesignin {
   font-size: 20px;
   text-align: center;
+  margin-top: 30px;
 }
 .Fclass {
   color: #1a73e8;
@@ -67,10 +68,12 @@
   color: #1a73e8;
   font-family: monospace;
   margin-bottom: 20px;
+  padding-right:70%;
 }
 
 .learnclass {
   color: #1a73e8;
+  padding-right:70%;
 }
 
 .createaccountclass {

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UserserviceService } from 'src/app/services/userservice/userservice.service';
 
 
 @Component({
@@ -11,7 +12,7 @@ export class SigninComponent implements OnInit {
 
   signinform!: FormGroup;
 
-  constructor(private formBuilder:FormBuilder) { }
+  constructor(private formBuilder:FormBuilder,private userservice: UserserviceService) { }
 
   ngOnInit(): void {
     this.signinform=this.formBuilder.group({
@@ -23,6 +24,20 @@ export class SigninComponent implements OnInit {
 
   onsubmit(){
 
+    if(this.signinform.valid){
+    console.log("valid data" , this.signinform.value);
+    let data={
+    email:this.signinform.value.emailorphone,
+    password:this.signinform.value.p,
+    
+    }
+    this.userservice.login(data).subscribe((result:any)=>{
+      console.log('registration response ==========',result);
+  })
+}
+    else {
+    console.log("Invalid data",this.signinform.value);
+  }
+}
   }
 
-}

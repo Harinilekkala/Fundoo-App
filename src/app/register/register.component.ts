@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UserserviceService } from '../services/userservice/userservice.service';
 
 
 
@@ -10,9 +11,10 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class RegisterComponent implements OnInit {
 
+  
   registerForm!: FormGroup;
 
-  constructor(private formBuilder:FormBuilder ) { }
+  constructor(private formBuilder:FormBuilder,private userservice: UserserviceService ) { }
   
   ngOnInit(): void {
     this.registerForm=this.formBuilder.group({
@@ -24,16 +26,23 @@ export class RegisterComponent implements OnInit {
     })
   }
   onsubmit(){
-    // if(this.registerForm.valid){
-    //   console.log("valid data" , this.registerForm.value);
-    //   let data={
-    //     firstName:this.registerForm.value.fn,
-    //     LastName:this.registerForm.value.ln,
-    //     email:this.registerForm.value.e,
-    //     password:this.registerForm.value.p,
-    //     service:"advance"
-    //   }
-    // }
+    if(this.registerForm.valid){
+      console.log("valid data" , this.registerForm.value);
+      let data={
+        firstName:this.registerForm.value.fn,
+        lastName:this.registerForm.value.ln,
+        email:this.registerForm.value.e,
+        password:this.registerForm.value.p,
+        service:"advance"
+      }
+      this.userservice.register(data).subscribe((result:any)=>{
+        console.log('registration response ==========',result);
+      })
+    }
+
+    else{
+      console.log("Invalid data",this.registerForm.value);
+    }
   }
 
 }

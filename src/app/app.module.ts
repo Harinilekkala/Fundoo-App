@@ -11,6 +11,7 @@ import { SigninComponent } from './Components/signin/signin.component';
 import { ForgotpageComponent } from './forgotpage/forgotpage.component';
 import { ResetpageComponent } from './resetpage/resetpage.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +26,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatFormFieldModule,
     MatInputModule,
     BrowserAnimationsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
