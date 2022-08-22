@@ -1,6 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ArchiveComponent } from './Components/archive/archive.component';
+import { DashboardComponent } from './Components/dashboard/dashboard.component';
+import { GetNotesComponent } from './Components/Notes/get-notes.component';
+import { RemainderComponent } from './Components/remainder/remainder.component';
 import { SigninComponent } from './Components/signin/signin.component';
+import { TrashComponent } from './Components/trash/trash.component';
 import { ForgotpageComponent } from './forgotpage/forgotpage.component';
 import { RegisterComponent } from './register/register.component';
 import { ResetpageComponent } from './resetpage/resetpage.component';
@@ -10,6 +15,15 @@ const routes: Routes = [
   {path:'signin' ,component:SigninComponent},
   {path:'forgotpage' ,component:ForgotpageComponent},
   {path:'resetpage' ,component:ResetpageComponent},
+  {path:'dashboard',component:DashboardComponent,
+
+  children:[
+    {path:'Notes',component:GetNotesComponent},
+    {path:'trash',component:TrashComponent},
+    {path:'archive',component:ArchiveComponent},
+    {path:'remainder',component:RemainderComponent}
+  ]
+},
 ];
 
 @NgModule({

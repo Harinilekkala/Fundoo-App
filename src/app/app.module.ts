@@ -12,13 +12,35 @@ import { ForgotpageComponent } from './forgotpage/forgotpage.component';
 import { ResetpageComponent } from './resetpage/resetpage.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { DashboardComponent } from './Components/dashboard/dashboard.component';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
+import {MatListModule} from '@angular/material/list';
+import { GetNotesComponent } from './Components/Notes/get-notes.component';
+import { ArchiveComponent } from './Components/archive/archive.component';
+import { TrashComponent } from './Components/trash/trash.component';
+import { RemainderComponent } from './Components/remainder/remainder.component';
+import { CreatenoteComponent } from './Components/createnote/createnote.component';
+import { DisplaynoteComponent } from './Components/displaynote/displaynote.component';
+import { IconsComponent } from './Components/icons/icons.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     RegisterComponent,
     SigninComponent,
     ForgotpageComponent,
-    ResetpageComponent
+    ResetpageComponent,
+    DashboardComponent,
+    GetNotesComponent,
+    ArchiveComponent,
+    TrashComponent,
+    RemainderComponent,
+    CreatenoteComponent,
+    DisplaynoteComponent,
+    IconsComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -27,7 +49,11 @@ import { HttpClientModule } from '@angular/common/http';
     MatInputModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSidenavModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatListModule
     
   ],
   providers: [],
