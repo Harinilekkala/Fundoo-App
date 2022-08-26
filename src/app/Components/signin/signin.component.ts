@@ -33,6 +33,7 @@ export class SigninComponent implements OnInit {
     }
     this.userservice.login(data).subscribe((result:any)=>{
       console.log('registration response ==========',result);
+      localStorage.setItem('token',result.id)
   })
 }
     else {

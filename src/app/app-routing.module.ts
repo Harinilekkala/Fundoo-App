@@ -2,13 +2,15 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ArchiveComponent } from './Components/archive/archive.component';
 import { DashboardComponent } from './Components/dashboard/dashboard.component';
-import { GetNotesComponent } from './Components/Notes/get-notes.component';
+import { GetNotesComponent } from './Components/Notes/getallnotes.component';
 import { RemainderComponent } from './Components/remainder/remainder.component';
 import { SigninComponent } from './Components/signin/signin.component';
 import { TrashComponent } from './Components/trash/trash.component';
 import { ForgotpageComponent } from './forgotpage/forgotpage.component';
 import { RegisterComponent } from './register/register.component';
 import { ResetpageComponent } from './resetpage/resetpage.component';
+import { EditlabelComponent } from './Components/editlabel/editlabel.component';
+
 
 const routes: Routes = [
   {path:'register',component:RegisterComponent},
@@ -21,7 +23,8 @@ const routes: Routes = [
     {path:'Notes',component:GetNotesComponent},
     {path:'trash',component:TrashComponent},
     {path:'archive',component:ArchiveComponent},
-    {path:'remainder',component:RemainderComponent}
+    {path:'remainder',component:RemainderComponent},
+    {path:'editlabel',component:EditlabelComponent}
   ]
 },
 ];

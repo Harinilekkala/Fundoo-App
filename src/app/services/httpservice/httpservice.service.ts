@@ -17,5 +17,11 @@ export class HttpserviceService {
     return this.httpClient.get(url, token && httpOptions)
   }
 
-  putservice(){}
+  putservice(url:string, data:any, token:boolean=false, httpOptions:any){
+    
+    return this.httpClient.post(url, data, token && httpOptions)
+  }
+  deleteservice(url:string, token:boolean=false, httpOptions:any){
+    return this.httpClient.get(url, token && httpOptions)
+  }
 }

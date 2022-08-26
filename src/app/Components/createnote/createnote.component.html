@@ -1,14 +1,73 @@
-<div class="containerclass">
-    <div >
-        <input type="text" class="titleclass" placeholder="Title">
+<div fxLayoutAlign="center center" class="back-color">
+    <div class="add-form" fxLayout="column" fxLayoutAlign="center center">
+        <div class="form-element">
+            <form [formGroup]= "createNoteForm" (ngSubmit)="onSubmit()">
+                <div fxLayout="row">
+                    <div class="input-form" *ngIf= "flag">
+                        <input type="text" placeholder="Title" formControlName="title">
+                    </div>
+                    <div *ngIf= "flag" class="icons"><img src="../../../assets/assests/pinicon.png" alt=""></div>
+                </div>
+                <div fxLayout="row">
+                    <div class="input-form" (click)="open()">
+                        <input id="take-note" type="text" placeholder="Take a note..." formControlName="desc">
+                    </div>
+                    <div *ngIf= "!flag" fxLayout="column">
+                        <div class="icons"><img src="../../../assets/assests/check_box.svg" alt=""></div>
+                        <div class="icons"><img src="../../../assets/assests/brush.svg" alt=""></div>
+                        <div class="icons"><img src="../../../assets/assests/image.svg" alt=""></div>
+                    </div>
+                </div>
+                <div class="icon-button" *ngIf="flag" fxLayout="row" fxLayoutAlign="space-between center">
+                    <div class="icon-container">
+                        
+                    </div>
+                    <!-- <app-icons></app-icons> -->
+                    <button mat-button>Close</button>
+                </div>
+            </form>
+        </div>
     </div>
-    <div>
-        <input type="text" class="subtitleclass" placeholder="Take a note...">
-    </div>
-    <div>
-        <app-icons></app-icons>
-        <!-- <button (click)="myFunc()">add</button> -->
-        <button class="closeclass">close</button>
-    </div>
-
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="containerclass" >
+    <form [formGroup]= "createNoteForm" (ngSubmit)="onSubmit()">
+    <div class="input-form" *ngIf="isshow"   > -->
+        <!-- <img class="pinclass" src="../../../assets/assests/pinicon.png">
+        <input [(ngModel)]="title"  type="text"   class="titleclass" placeholder="Title" formControlName="title" />
+        
+    </div>
+    <div *ngIf="!isshow || isshow" (click)="show()" (ngSubmit)="show()">
+        <input [(ngModel)]="desc" type="text" class="subtitleclass" placeholder="Take a note..." formControlName="descript">
+    </div>
+    <div *ngIf="isshow">
+        <app-icons></app-icons>
+        
+        <button (click)="close()" class="closeclass">close</button>
+    </div> -->
+
+<!-- </div> -->
+<!-- <button (click)="myFunc()">add</button> -->

@@ -17,13 +17,17 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatListModule} from '@angular/material/list';
-import { GetNotesComponent } from './Components/Notes/get-notes.component';
+import { GetNotesComponent } from './Components/Notes/getallnotes.component';
 import { ArchiveComponent } from './Components/archive/archive.component';
 import { TrashComponent } from './Components/trash/trash.component';
 import { RemainderComponent } from './Components/remainder/remainder.component';
 import { CreatenoteComponent } from './Components/createnote/createnote.component';
 import { DisplaynoteComponent } from './Components/displaynote/displaynote.component';
 import { IconsComponent } from './Components/icons/icons.component';
+import { EditlabelComponent } from './Components/editlabel/editlabel.component';
+
+
+
 
 @NgModule({
   declarations: [
@@ -40,6 +44,10 @@ import { IconsComponent } from './Components/icons/icons.component';
     CreatenoteComponent,
     DisplaynoteComponent,
     IconsComponent,
+    EditlabelComponent,
+    
+    
+    
     
   ],
   imports: [
@@ -53,7 +61,8 @@ import { IconsComponent } from './Components/icons/icons.component';
     MatSidenavModule,
     MatToolbarModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    
     
   ],
   providers: [],
