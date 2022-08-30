@@ -18,6 +18,7 @@ const routes: Routes = [
   {path:'forgotpage' ,component:ForgotpageComponent},
   {path:'resetpage' ,component:ResetpageComponent},
   {path:'dashboard',component:DashboardComponent,
+  
 
   children:[
     {path:'Notes',component:GetNotesComponent},

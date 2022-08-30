@@ -29,6 +29,7 @@ import { EditlabelComponent } from './Components/editlabel/editlabel.component';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,6 +46,7 @@ import { EditlabelComponent } from './Components/editlabel/editlabel.component';
     DisplaynoteComponent,
     IconsComponent,
     EditlabelComponent,
+    
     
     
     

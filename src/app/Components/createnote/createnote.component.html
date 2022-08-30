@@ -6,23 +6,25 @@
                     <div class="input-form" *ngIf= "flag">
                         <input type="text" placeholder="Title" formControlName="title">
                     </div>
-                    <div *ngIf= "flag" class="icons"><img src="../../../assets/assests/pinicon.png" alt=""></div>
+                    <div *ngIf= "flag" class="pinicon"><img src="../../../assets/assests/pinicon.png" height="25px" width="25px" alt=""></div>
                 </div>
                 <div fxLayout="row">
                     <div class="input-form" (click)="open()">
                         <input id="take-note" type="text" placeholder="Take a note..." formControlName="desc">
-                    </div>
-                    <div *ngIf= "!flag" fxLayout="column">
+                    
+                    <div class="takeicons" *ngIf= "!flag" fxLayout="column">
                         <div class="icons"><img src="../../../assets/assests/check_box.svg" alt=""></div>
                         <div class="icons"><img src="../../../assets/assests/brush.svg" alt=""></div>
                         <div class="icons"><img src="../../../assets/assests/image.svg" alt=""></div>
                     </div>
                 </div>
+                </div>
                 <div class="icon-button" *ngIf="flag" fxLayout="row" fxLayoutAlign="space-between center">
                     <div class="icon-container">
                         
                     </div>
-                    <!-- <app-icons></app-icons> -->
+                    <app-icons></app-icons>
+                    
                     <button mat-button>Close</button>
                 </div>
             </form>

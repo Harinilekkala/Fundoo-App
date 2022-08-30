@@ -1,5 +1,10 @@
-<div class="displayclass">
-    <p>Title</p>
-    <p>discription</p>
+<div class="displaycontainerclass">
+<div class="displayclass" *ngFor="let note of notedata">
+    
+    <div>{{note.title}}</div>
+    <div>{{note.description}}</div>
+    <div>
     <app-icons></app-icons>
+</div>
+</div>
 </div>

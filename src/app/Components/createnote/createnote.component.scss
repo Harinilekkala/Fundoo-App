@@ -5,7 +5,9 @@
     border-radius: 6px;
     box-shadow: 0 3px 10px rgba(27, 26, 26, 0.667);
     width: 580px;
-    margin-top: 25px;
+    margin: 25px auto;
+    
+    
 }
 .input-form{
     width: 100%;
@@ -26,13 +28,17 @@
     margin-left: 32px;
 }
 .icon-button{
-    width: 95%;
+    // width: 95%;
 }
 .icon-button > button{
     font-family: 'Raleway', sans-serif;
     font-weight: bold;
     width: 80px;
     height: 35px;
+    position: relative;
+    left: 50%;
+    bottom: 10px;
+    border: none;
 }
 .icon-container{
     margin-top: 3px;
@@ -54,8 +60,10 @@
     cursor: pointer;
 }
 .icons > img{
-    height: 22px;
+    height: 12px;
     margin-top: 5px;
+    flex-direction: row;
+
 }
 
 .add-form-xs{
@@ -65,4 +73,17 @@
 .back-color{
     background-color:#fff;
     // border: 1px solid rgb(249, 244, 244);
+}
+
+.takeicons{
+    display: flex;
+    position: absolute;
+    top: 22px;
+    left: 60% ;
+}
+.pinicon{
+    position: absolute;
+    left: 70%;
+    top: 30px;
+    
 }
