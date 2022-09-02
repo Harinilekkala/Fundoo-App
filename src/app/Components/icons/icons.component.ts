@@ -11,5 +11,8 @@ export class IconsComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  archive(){
+    console.log("archive added")
+  }
 
 }

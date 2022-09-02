@@ -30,6 +30,35 @@ export class NoteuserserviceService {
     }
     return this.http.getservice('http://fundoonotes.incubation.bridgelabz.com/api/notes/getNotesList', true, header)
   }
+  update_note(data:any){
+    let header={
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': this.token
+      })
+    }
+      return this.http.postservice('http://fundoonotes.incubation.bridgelabz.com/api/notes/updateNotes', data, true, header)
+  }
+
+  archive_note(data:any){
+    let header={
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': this.token
+      })
+    }
+    return this.http.postservice('http://fundoonotes.incubation.bridgelabz.com/api/notes/archiveNotes', data, true, header)
+  }
+
+  get_archive_note(){
+    let header={
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': this.token
+      })
+    }
+    return this.http.getservice('http://fundoonotes.incubation.bridgelabz.com/api/notes/getArchiveNotesList', true, header)
+  }
     
       // editnote(xyz:any,userid:any){
       //   let headers= new HttpHeaders().set(

@@ -1,0 +1,22 @@
+<div class="form-element" fxLayout="column" fxLayoutAlign="center center" >
+    <div class="form-class">
+        <div fxLayout="row">
+            <div class="input-form">
+                <input type="text" placeholder="Title" >
+                <img class="icons" src="../../../assets/assests/pinicon.png" alt="">
+            </div>
+            <!-- <div class="icons"><img src="../../../assets/assests/pinicon.png" alt=""></div> -->
+        </div>
+        <div class="desc-container" fxLayout="row">
+            <div class="input-form">
+                <input type="text" placeholder=" note..." >
+            </div>
+        </div>
+        <div class="icon-button" fxLayout="row" fxLayoutAlign="space-between center">
+            <div class="icon-container"></div>
+                <app-icons ></app-icons>
+            </div>
+            <button mat-button (click)="update()" >Close</button>
+
+        </div>
+    </div>

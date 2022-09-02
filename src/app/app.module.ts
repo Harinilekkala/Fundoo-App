@@ -25,6 +25,8 @@ import { CreatenoteComponent } from './Components/createnote/createnote.componen
 import { DisplaynoteComponent } from './Components/displaynote/displaynote.component';
 import { IconsComponent } from './Components/icons/icons.component';
 import { EditlabelComponent } from './Components/editlabel/editlabel.component';
+import { UpdateComponent } from './Components/update/update.component';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 
 
 
@@ -46,6 +48,7 @@ import { EditlabelComponent } from './Components/editlabel/editlabel.component';
     DisplaynoteComponent,
     IconsComponent,
     EditlabelComponent,
+    UpdateComponent,
     
     
     
@@ -64,6 +67,7 @@ import { EditlabelComponent } from './Components/editlabel/editlabel.component';
     MatToolbarModule,
     MatIconModule,
     MatListModule,
+    MatDialogModule
     
     
   ],
