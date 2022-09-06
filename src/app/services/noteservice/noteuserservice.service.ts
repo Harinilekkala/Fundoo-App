@@ -59,6 +59,29 @@ export class NoteuserserviceService {
     }
     return this.http.getservice('http://fundoonotes.incubation.bridgelabz.com/api/notes/getArchiveNotesList', true, header)
   }
+  get_trash_note(){
+    let header={
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': this.token
+      })
+    }
+    return this.http.getservice('http://fundoonotes.incubation.bridgelabz.com/api/notes/getTrashNotesList', true, header)
+  }
+
+  delete_note(data:any){
+    let header={
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': this.token
+      })
+    }
+    return this.http.postservice('http://fundoonotes.incubation.bridgelabz.com/api/notes/trashNotes', data, true, header)
+  }
+    
+  }
+
+  
     
       // editnote(xyz:any,userid:any){
       //   let headers= new HttpHeaders().set(
@@ -74,5 +97,5 @@ export class NoteuserserviceService {
       //       )
       //       return this.http.deleteservice(`http://fundoonotes.incubation.bridgelabz.com/api/user/${userid}/notes`,false,headers)
       //     }
-}
+
 

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NoteuserserviceService } from 'src/app/services/noteservice/noteuserservice.service';
+import { UpdateComponent } from '../update/update.component';
 
 @Component({
   selector: 'app-archive',
@@ -15,14 +16,19 @@ export class ArchiveComponent implements OnInit {
     this.display_archive()
   }
   display_archive(){
-    this.note.get_note().subscribe((response:any) =>{
-      this.archivelist = response.data
-      this.archivelist = this.archivelist.filter((object : any) =>{
-        return object.archive == true && object.trash == false;
-      })
+    console.log('GetArchiveNotes Api Calling..')
+    this.note.get_archive_note().subscribe((res:any)=>{
+      this.archivelist=res.data.data
       console.log(this.archivelist)
     })
   }
+  // display_archive(){
+  //   console.log('GetArchiveNotes Api Calling..')
+  //   this.note.get_archive_note().subscribe((res:any)=>{
+  //     this.archivelist=res.data.data
+  //     console.log(this.archivelist)
+  //   })
+  // }
   
   
 

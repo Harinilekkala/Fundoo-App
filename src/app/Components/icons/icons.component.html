@@ -19,9 +19,16 @@
     <img class="icons" src="../../../assets/assests/image.svg" alt="">
     
      <img (click)="archive()" class="icons" src="../../../assets/assests/archive icon.png" alt="">
-    
-    <img class="icons" src="../../../assets/assests/moreicon.png" alt="">
-    
+     <img (click)="unarchive()" class="icons" img src="../../../assets/assests/unarchive.svg" alt="">
+    <img class="icons" mat-icon-button [matMenuTriggerFor]="menu" src="../../../assets/assests/moreicon.png" alt="">
+    <mat-menu #menu="matMenu" >
+        <button (click)="trash()" mat-menu-item>Delete note</button>
+        <button mat-menu-item>Add label</button>
+        <button mat-menu-item>Add drawing</button>
+        <button mat-menu-item>Make a copy</button>
+        <button mat-menu-item>Show checkboxes</button>
+        <button mat-menu-item>Copy to Google Docs</button>
+    </mat-menu>
     </div>
 
 

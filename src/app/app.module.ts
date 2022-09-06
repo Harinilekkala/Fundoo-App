@@ -27,6 +27,7 @@ import { IconsComponent } from './Components/icons/icons.component';
 import { EditlabelComponent } from './Components/editlabel/editlabel.component';
 import { UpdateComponent } from './Components/update/update.component';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import {MatMenuModule} from '@angular/material/menu';
 
 
 
@@ -54,6 +55,8 @@ import { MatDialog, MatDialogModule } from '@angular/material/dialog';
     
     
     
+    
+    
   ],
   imports: [
     BrowserModule,
@@ -67,7 +70,8 @@ import { MatDialog, MatDialogModule } from '@angular/material/dialog';
     MatToolbarModule,
     MatIconModule,
     MatListModule,
-    MatDialogModule
+    MatDialogModule,
+    MatMenuModule
     
     
   ],

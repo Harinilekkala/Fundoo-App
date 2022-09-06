@@ -15,6 +15,7 @@ import { UpdateComponent } from '../update/update.component';
 })
 export class DisplaynoteComponent implements OnInit {
   message:any;
+  noteId:any;
   
 
   
@@ -36,10 +37,7 @@ export class DisplaynoteComponent implements OnInit {
       console.log('The dialog was closed');
     });
   }
-   receiveMessage(event:any){
-   console.log(event)
-    this.messageEvent.emit(event)
-  }
+   
 
 
 
