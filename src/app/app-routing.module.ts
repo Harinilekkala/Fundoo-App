@@ -10,6 +10,7 @@ import { ForgotpageComponent } from './forgotpage/forgotpage.component';
 import { RegisterComponent } from './register/register.component';
 import { ResetpageComponent } from './resetpage/resetpage.component';
 import { EditlabelComponent } from './Components/editlabel/editlabel.component';
+import { AuthenticationGuard } from './authentication.guard';
 
 
 const routes: Routes = [
@@ -17,7 +18,8 @@ const routes: Routes = [
   {path:'signin' ,component:SigninComponent},
   {path:'forgotpage' ,component:ForgotpageComponent},
   {path:'resetpage' ,component:ResetpageComponent},
-  {path:'dashboard',component:DashboardComponent,
+  {path:'dashboard',component:DashboardComponent},
+  {path : 'dashboard' ,component:DashboardComponent,canActivate:[AuthenticationGuard],
   
 
   children:[

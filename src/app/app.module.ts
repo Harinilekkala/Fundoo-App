@@ -28,7 +28,7 @@ import { EditlabelComponent } from './Components/editlabel/editlabel.component';
 import { UpdateComponent } from './Components/update/update.component';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import {MatMenuModule} from '@angular/material/menu';
-
+import { AuthguardserviceService } from './authguardservice.service';
 
 
 
@@ -77,7 +77,9 @@ import {MatMenuModule} from '@angular/material/menu';
     
     
   ],
-  providers: [],
+  providers: [ AuthguardserviceService
+  ],
   bootstrap: [AppComponent]
+ 
 })
 export class AppModule { }
