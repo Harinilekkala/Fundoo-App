@@ -3,7 +3,7 @@
         <div fxLayout="row">
             <div class="input-form">
                 <input type="text" placeholder="Title" >
-                <img class="icons" src="../../../assets/assests/pinicon.png" alt="">
+                <!-- <img class="icons" src="../../../assets/assests/pinicon.png" alt=""> -->
             </div>
             <!-- <div class="icons"><img src="../../../assets/assests/pinicon.png" alt=""></div> -->
         </div>
@@ -14,7 +14,7 @@
         </div>
         <div class="icon-button" fxLayout="row" fxLayoutAlign="space-between center">
             <div class="icon-container"></div>
-                <app-icons ></app-icons>
+                <app-icons [childmessage]="data.id"></app-icons>
             </div>
             <button mat-button (click)="update()" >Close</button>
 

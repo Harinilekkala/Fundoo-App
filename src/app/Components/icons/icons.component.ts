@@ -1,5 +1,5 @@
 import { Component, OnInit, Input,Output,EventEmitter } from '@angular/core';
-
+import { ActivatedRoute } from '@angular/router';
 import { NoteuserserviceService } from 'src/app/services/noteservice/noteuserservice.service';
 
 @Component({
@@ -11,10 +11,16 @@ export class IconsComponent implements OnInit {
   @Input() childmessage:any;
   @Output() messageEvent = new EventEmitter<any>();
   message:any;
+  flag:any;
+  isDeleteforever: boolean = true;
+  isDeleted: boolean = true;
 
-  constructor(private note:NoteuserserviceService) { }
+  constructor(private note:NoteuserserviceService, private route:ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.flag=this.route.snapshot.url[0].path;
+    console.log(this.flag)
+    console.log("flag displayed");
   }
   
   archive(){
@@ -22,8 +28,6 @@ export class IconsComponent implements OnInit {
     console.log(this.childmessage);
     let data={
       noteIdList:[this.childmessage],
-      
-      
       isArchived: true
     }
     console.log(data)
@@ -59,6 +63,30 @@ export class IconsComponent implements OnInit {
     this.note.delete_note(data).subscribe((res:any)=>{
       console.log(res);
       this.messageEvent.emit(this.message='Note Trashed')
+      
+    })
+  }
+  delete_permanent(){
+    console.log('Icons permanentDelete Note Api Calling..')
+    let data={
+      noteIdList: [this.childmessage],
+      isDeleted: true
+    }
+    this.note.permanent_delete(data).subscribe((res)=>{
+      console.log(res);
+      this.messageEvent.emit(this.message='Note Deleted')
+      
+    })
+  }
+  restore(){
+    console.log('Icons restore Note Api Calling..')
+    let data={
+      noteIdList: [this.childmessage],
+      isDeleted: false
+    }
+    this.note.delete_note(data).subscribe((res)=>{
+      console.log(res);
+      this.messageEvent.emit(this.message='Note Restored')
       
     })
   }

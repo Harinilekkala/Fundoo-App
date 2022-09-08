@@ -18,7 +18,7 @@ export class GetNotesComponent implements OnInit {
   }
   getnotes(){
     console.log('GetAllNotes Api Calling..')
-    this.note.get_note().subscribe((res:any)=>{
+    this.note.getallnotes().subscribe((res:any)=>{
       console.log(res.data.data);
       this.noteArray = res.data.data;
       this.notesValue = this.noteArray.filter((obj:any)=>{

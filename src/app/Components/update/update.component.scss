@@ -9,6 +9,7 @@
 }
 .input-form{
     width: 100%;
+    display: flex;
 }
 .input-form > input{
     font-family: 'Raleway', sans-serif;
@@ -50,6 +51,9 @@
     align-items: center;
     justify-content: center;
     margin-right: 0px;
+    height: 20px;
+    margin-top: 18px;
+    margin-left: 150px;
 }
 .icons:hover{
     background-color: rgba(224, 223, 221, 0.995);
@@ -57,8 +61,9 @@
     cursor: pointer;
 }
 .icons > img{
-    height: 22px;
+    height: 20px;
     margin-top: 5px;
+    
 }
 // ::ng-deep .custom-dialog-container {
 //     mat-dialog-container {

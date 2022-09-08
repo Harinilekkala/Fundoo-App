@@ -17,14 +17,17 @@ export class DisplaynoteComponent implements OnInit {
   message:any;
   noteId:any;
   
-
   
+   
     @Output() messageEvent = new EventEmitter<any>();
-  
+    
+    @Input () notedata :any;
 
   constructor(public dialog: MatDialog,private noteuserservice:NoteuserserviceService) { }
-  @Input () notedata :any;
+  
   ngOnInit(): void {
+    
+    
     
   }
   openDialog(note:any): void {

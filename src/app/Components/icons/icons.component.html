@@ -1,26 +1,20 @@
+<div class="icon-container" fxLayout="row" fxLayoutAlign="space-between start" >
 
-<!-- <img class="iconclass" src="../../../assets/assests/Noteicon2.png"/>
-<img class="iconclass2" src="../../../assets/assests/peopleicon.png">
-<img class="iconclass2" src="../../../assets/assests/coloricon.png">
-<img class="iconclass2" src="../../../assets/assests/add image.png">
-<img class="iconclass2" (click)="archive" src="../../../assets/assests/archive icon.png">
-<img class="iconclass2" src="../../../assets/assests/moreicon.png"> -->
-<!-- <img class="iconclass2" src="../../../assets/assests/undoicon.png">
-<img class="iconclass2" src="../../../assets/assests/redo icon.png"> -->
+    <div *ngIf="flag!= 'trash'" class="icons"><img src="../../../assets/assests/remainder icon.png" alt=""></div>
+    <div *ngIf="flag!= 'trash'" class="icons"><img src="../../../assets/assests/peopleicon.png" alt=""></div>
+    <div *ngIf="flag!= 'trash'" class="icons"><img src="../../../assets/assests/coloricon.png" alt=""></div>
+    <div *ngIf="flag!= 'trash'" class="icons"><img src="../../../assets/assests/image.svg" alt=""></div>
+     
 
-
-
-
-<div class="icon-container" >
+    <div fxLayot="row" fxLayoutAlign="star center">
+        <div *ngIf="flag == 'trash'" class="trash1" (click)="delete_permanent()"><img src="../../../assets/assests/delete_forevericon.png" alt=""></div>
+        <div *ngIf="flag == 'trash'" class="trash1" (click)="restore()"><img src="../../../assets/assests/restore icon_from_trash.png" alt=""></div>
+    </div>
     
-    <img class="icons" src="../../../assets/assests/remainder icon.png" alt="">
-    <img class="icons" src="../../../assets/assests/peopleicon.png" alt="">
-    <img class="icons" src="../../../assets/assests/coloricon.png" alt="">
-    <img class="icons" src="../../../assets/assests/image.svg" alt="">
-    
-     <img (click)="archive()" class="icons" src="../../../assets/assests/archive icon.png" alt="">
-     <img (click)="unarchive()" class="icons" img src="../../../assets/assests/unarchive.svg" alt="">
-    <img class="icons" mat-icon-button [matMenuTriggerFor]="menu" src="../../../assets/assests/moreicon.png" alt="">
+    <div *ngIf="flag!= 'trash' && flag!= 'archive'" class="icons" (click)="archive()"><img src="../../../assets/assests/archive icon.png" alt=""></div>
+    <div *ngIf="flag!= 'trash' && flag == 'archive'" class="icons" (click)="unarchive()"><img src="../../../assets/assests/unarchive.svg" alt=""></div>
+    <div *ngIf="flag!= 'trash'" class="icons" mat-icon-button [matMenuTriggerFor]="menu"><img src="../../../assets/assests/moreicon.png" alt=""></div>
+     
     <mat-menu #menu="matMenu" >
         <button (click)="trash()" mat-menu-item>Delete note</button>
         <button mat-menu-item>Add label</button>
@@ -29,7 +23,8 @@
         <button mat-menu-item>Show checkboxes</button>
         <button mat-menu-item>Copy to Google Docs</button>
     </mat-menu>
-    </div>
+    
+</div>    
 
 
 

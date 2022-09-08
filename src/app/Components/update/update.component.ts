@@ -11,17 +11,17 @@ export class UpdateComponent implements OnInit {
 
   title:any;
   desc:any;
-  color:any;
+  // color:any;
 
   constructor( public dialogRef: MatDialogRef<UpdateComponent>,
     @Inject(MAT_DIALOG_DATA) public data:any,
-    private note:NoteuserserviceService,) { }
+    private note:NoteuserserviceService) { }
 
 
   ngOnInit(): void {
     this.title=this.data.title;
     this.desc = this.data.description;
-    this.color=this.data.color
+    // this.color=this.data.color
   }
   update(){
     let data={
@@ -35,10 +35,10 @@ export class UpdateComponent implements OnInit {
     })
     this.dialogRef.close();
   }
-  receiveMessage(event:any){
-    console.log(event);
-    this.color=event;
-  }
+  // receiveMessage(event:any){
+  //   console.log(event);
+  //   this.color=event;
+  // }
 
 }
 

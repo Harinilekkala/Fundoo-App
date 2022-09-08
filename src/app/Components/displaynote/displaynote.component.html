@@ -1,10 +1,10 @@
 <div class="notes-back" id="notes-main"  fxLayoutAlign="start center">
-    <div class="notes-container"fxLayout="row" fxLayoutAlign="start start" *ngFor="let note of notedata ">
+    <div class="notes-container"fxLayout="row" fxLayoutAlign="start start" *ngFor="let note of notedata  ">
         <div class="note">
             <div class="note-things">
                 <div class="note-data">
                     <div class="title-container" fxLayout="row" fxLayoutAlign="space-between start">
-                        <h2 (click)="openDialog(note)"> {{note.title}}</h2>
+                        <h2 (click)="openDialog(note)" > {{note.title}}</h2>
                         <div class="image-container">
                             <img id="pin-image" src="../../../assets/assests/pinicon.png">
                         </div>
@@ -13,13 +13,14 @@
                     
                 </div> 
                 <div class="icons" >
+                    
                     <app-icons [childmessage]="note.id" ></app-icons>
                 </div>
             </div>
             
         </div>
     </div>
-</div>
+</div> 
 
 
 
@@ -86,4 +87,24 @@
     <app-icons></app-icons>
 </div>
 </div>
-</div> -->
+</div> --> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

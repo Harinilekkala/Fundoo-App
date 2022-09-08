@@ -33,6 +33,7 @@ import {MatMenuModule} from '@angular/material/menu';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,6 +51,7 @@ import {MatMenuModule} from '@angular/material/menu';
     IconsComponent,
     EditlabelComponent,
     UpdateComponent,
+    
     
     
     

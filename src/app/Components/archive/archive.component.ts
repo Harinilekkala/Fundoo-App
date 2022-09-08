@@ -9,27 +9,24 @@ import { UpdateComponent } from '../update/update.component';
 })
 export class ArchiveComponent implements OnInit {
   archivelist:any
+  archivelistValue:any
 
   constructor(private note: NoteuserserviceService) { }
 
   ngOnInit(): void {
-    this.display_archive()
+    this.getnotes();
   }
-  display_archive(){
-    console.log('GetArchiveNotes Api Calling..')
-    this.note.get_archive_note().subscribe((res:any)=>{
-      this.archivelist=res.data.data
-      console.log(this.archivelist)
+  getnotes(){
+    console.log('GetArchive notes Api Calling..')
+    this.note.getallnotes().subscribe((res:any)=>{
+      console.log(res.data.data);
+      this.archivelist = res.data.data;
+      this.archivelistValue = this.archivelist.filter((obj:any)=>{
+        return obj.isArchived===true
     })
+  })
+    
   }
-  // display_archive(){
-  //   console.log('GetArchiveNotes Api Calling..')
-  //   this.note.get_archive_note().subscribe((res:any)=>{
-  //     this.archivelist=res.data.data
-  //     console.log(this.archivelist)
-  //   })
-  // }
-  
-  
 
+  
 }
