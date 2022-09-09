@@ -15,10 +15,11 @@ import { AuthenticationGuard } from './authentication.guard';
 
 const routes: Routes = [
   {path:'register',component:RegisterComponent},
+  {path:'',redirectTo:"/signin",pathMatch:'full'},
   {path:'signin' ,component:SigninComponent},
   {path:'forgotpage' ,component:ForgotpageComponent},
   {path:'resetpage' ,component:ResetpageComponent},
-  {path:'dashboard',component:DashboardComponent},
+  
   {path : 'dashboard' ,component:DashboardComponent,canActivate:[AuthenticationGuard],
   
 

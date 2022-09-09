@@ -6,19 +6,13 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class AuthguardserviceService implements CanActivate {
+export class AuthguardserviceService  {
   
-  constructor(private Authguardservice: AuthguardserviceService, private router: Router) {}   
+  constructor() {}   
   
-  canActivate(): boolean {  
-    if (!this.Authguardservice.gettoken()) {  
-        this.router.navigateByUrl("/signin"); 
-      return false 
-    }  
-    return this.Authguardservice.gettoken();  
-  } 
+  
   gettoken(){
-    return !!localStorage.getItem("SeesionUser");
+    return !!localStorage.getItem("token");
  }
 
 }
