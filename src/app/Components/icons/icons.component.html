@@ -1,8 +1,8 @@
 <div class="icon-container" fxLayout="row" fxLayoutAlign="space-between start" >
 
-    <div *ngIf="flag!= 'trash'" class="icons"><img src="../../../assets/assests/remainder icon.png" alt=""></div>
-    <div *ngIf="flag!= 'trash'" class="icons"><img src="../../../assets/assests/peopleicon.png" alt=""></div>
-    <div *ngIf="flag!= 'trash'" class="icons"><img src="../../../assets/assests/coloricon.png" alt=""></div>
+    <div *ngIf="flag!= 'trash'" class="icons"><img src="../../../assets/assests/notification.png" alt=""></div>
+    <div *ngIf="flag!= 'trash'" class="icons"><img src="../../../assets/assests/personadd.png" alt=""></div>
+    <div *ngIf="flag!= 'trash'" class="icons" mat-icon-button [matMenuTriggerFor]="colorMenu"><img src="../../../assets/assests/palatteicon.png" alt=""></div>
     <div *ngIf="flag!= 'trash'" class="icons"><img src="../../../assets/assests/image.svg" alt=""></div>
      
 
@@ -11,7 +11,7 @@
         <div *ngIf="flag == 'trash'" class="trash1" (click)="restore()"><img src="../../../assets/assests/restore icon_from_trash.png" alt=""></div>
     </div>
     
-    <div *ngIf="flag!= 'trash' && flag!= 'archive'" class="icons" (click)="archive()"><img src="../../../assets/assests/archive icon.png" alt=""></div>
+    <div *ngIf="flag!= 'trash' && flag!= 'archive'" class="icons" (click)="archive()"><img src="../../../assets/assests/archiveicon.png" alt=""></div>
     <div *ngIf="flag!= 'trash' && flag == 'archive'" class="icons" (click)="unarchive()"><img src="../../../assets/assests/unarchive.svg" alt=""></div>
     <div *ngIf="flag!= 'trash'" class="icons" mat-icon-button [matMenuTriggerFor]="menu"><img src="../../../assets/assests/moreicon.png" alt=""></div>
      
@@ -23,6 +23,14 @@
         <button mat-menu-item>Show checkboxes</button>
         <button mat-menu-item>Copy to Google Docs</button>
     </mat-menu>
+    <mat-menu #colorMenu="matMenu">
+        <div class="pop">
+            <div *ngFor="let color of colors" class="backgroundColours">
+                <button mat-mini-fab [style.background]="color?.code" (click)="change_color(color?.code)"></button>
+            </div>
+        </div>
+    </mat-menu>
+    
     
 </div>    
 

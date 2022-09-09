@@ -2,6 +2,7 @@ import { Component, OnInit, Input,Output,EventEmitter } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NoteuserserviceService } from 'src/app/services/noteservice/noteuserservice.service';
 
+
 @Component({
   selector: 'app-icons',
   templateUrl: './icons.component.html',
@@ -14,6 +15,22 @@ export class IconsComponent implements OnInit {
   flag:any;
   isDeleteforever: boolean = true;
   isDeleted: boolean = true;
+
+
+  colors: Array<any> = [
+    { code: '#ffffff', name: 'white' },
+    { code: '#FF6347', name: 'red' },
+    { code: '#FF4500', name: 'orange' },
+    { code: '#FFFF00', name: 'yellow' },
+    { code: '#ADFF2F', name: 'green' },
+    { code: '#43C6DB', name: 'teal' },
+    { code: '#728FCE', name: 'Blue' },
+    { code: '#2B65EC', name: 'darkblue' },
+    { code: '#D16587', name: 'purple' },
+    { code: '#F9A7B0', name: 'pink' },
+    { code: '#E2A76F', name: 'brown' },
+    { code: '#D3D3D3', name: 'grey'}
+  ]
 
   constructor(private note:NoteuserserviceService, private route:ActivatedRoute) { }
 
@@ -87,6 +104,21 @@ export class IconsComponent implements OnInit {
     this.note.delete_note(data).subscribe((res)=>{
       console.log(res);
       this.messageEvent.emit(this.message='Note Restored')
+      
+    })
+  }
+
+  change_color(note_color:any){
+    console.log('Icons ChangeNoteColor Api Calling..')
+    let data={
+      noteIdList: [this.childmessage],
+      color: note_color
+    }
+    console.log(data)
+    this.note.change_note_color(data).subscribe((res)=>{
+      console.log(res);
+      this.messageEvent.emit(note_color)
+      
       
     })
   }

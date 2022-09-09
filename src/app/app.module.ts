@@ -29,6 +29,7 @@ import { UpdateComponent } from './Components/update/update.component';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import {MatMenuModule} from '@angular/material/menu';
 import { AuthguardserviceService } from './authguardservice.service';
+import { DemoComponent } from './demo/demo.component';
 
 
 
@@ -51,6 +52,7 @@ import { AuthguardserviceService } from './authguardservice.service';
     IconsComponent,
     EditlabelComponent,
     UpdateComponent,
+    DemoComponent,
     
     
     

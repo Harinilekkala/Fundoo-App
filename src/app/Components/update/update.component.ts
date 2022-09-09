@@ -11,7 +11,7 @@ export class UpdateComponent implements OnInit {
 
   title:any;
   desc:any;
-  // color:any;
+  color:any;
 
   constructor( public dialogRef: MatDialogRef<UpdateComponent>,
     @Inject(MAT_DIALOG_DATA) public data:any,
@@ -21,13 +21,14 @@ export class UpdateComponent implements OnInit {
   ngOnInit(): void {
     this.title=this.data.title;
     this.desc = this.data.description;
-    // this.color=this.data.color
+     this.color=this.data.color
   }
   update(){
     let data={
       'noteId': this.data.id,
       'title': this.title,
-      'description': this.desc
+      'description': this.desc,
+      
     }
     console.log('Update Note Api calling starts..')
     this.note.update_note(data).subscribe((res:any)=>{

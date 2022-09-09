@@ -11,6 +11,7 @@ import { RegisterComponent } from './register/register.component';
 import { ResetpageComponent } from './resetpage/resetpage.component';
 import { EditlabelComponent } from './Components/editlabel/editlabel.component';
 import { AuthenticationGuard } from './authentication.guard';
+import { DemoComponent } from './demo/demo.component';
 
 
 const routes: Routes = [
@@ -20,6 +21,7 @@ const routes: Routes = [
   {path:'forgotpage' ,component:ForgotpageComponent},
   {path:'resetpage' ,component:ResetpageComponent},
   
+  
   {path : 'dashboard' ,component:DashboardComponent,canActivate:[AuthenticationGuard],
   
 
@@ -28,7 +30,10 @@ const routes: Routes = [
     {path:'trash',component:TrashComponent},
     {path:'archive',component:ArchiveComponent},
     {path:'remainder',component:RemainderComponent},
-    {path:'editlabel',component:EditlabelComponent}
+    {path:'editlabel',component:EditlabelComponent},
+    {path:'demo',component:DemoComponent},
+    
+
   ]
 },
 ];

@@ -1,6 +1,6 @@
 <div class="notes-back" id="notes-main"  fxLayoutAlign="start center">
     <div class="notes-container"fxLayout="row" fxLayoutAlign="start start" *ngFor="let note of notedata  ">
-        <div class="note">
+        <div class="note" [style.background]="note.color">
             <div class="note-things">
                 <div class="note-data">
                     <div class="title-container" fxLayout="row" fxLayoutAlign="space-between start">

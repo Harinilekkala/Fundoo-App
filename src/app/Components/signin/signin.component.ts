@@ -10,38 +10,38 @@ import { UserserviceService } from 'src/app/services/userservice/userservice.ser
 })
 export class SigninComponent implements OnInit {
 
-  user='1'
+  user = '1'
 
   signinform!: FormGroup;
 
-  constructor(private formBuilder:FormBuilder,private userservice: UserserviceService) { }
+  constructor(private formBuilder: FormBuilder, private userservice: UserserviceService) { }
 
   ngOnInit(): void {
-    
-    this.signinform=this.formBuilder.group({
-      
-      emailorphone:['', [Validators.required, Validators.minLength(15)]],
-      p:['', [Validators.required, Validators.minLength(6)]],
+
+    this.signinform = this.formBuilder.group({
+
+      emailorphone: ['', [Validators.required, Validators.minLength(15)]],
+      p: ['', [Validators.required, Validators.minLength(6)]],
     })
   }
 
-  onsubmit(){
+  onsubmit() {
 
-    if(this.signinform.valid){
-    console.log("valid data" , this.signinform.value);
-    let data={
-    email:this.signinform.value.emailorphone,
-    password:this.signinform.value.p,
-    
+    if (this.signinform.valid) {
+      console.log("valid data", this.signinform.value);
+      let data = {
+        email: this.signinform.value.emailorphone,
+        password: this.signinform.value.p,
+
+      }
+      this.userservice.login(data).subscribe((result: any) => {
+        console.log('registration response ==========', result);
+        localStorage.setItem('token', result.id)
+      })
     }
-    this.userservice.login(data).subscribe((result:any)=>{
-      console.log('registration response ==========',result);
-      localStorage.setItem('token',result.id)
-  })
-}
     else {
-    console.log("Invalid data",this.signinform.value);
+      console.log("Invalid data", this.signinform.value);
+    }
   }
 }
-  }
 
